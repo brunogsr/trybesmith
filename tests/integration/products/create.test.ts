@@ -27,7 +27,7 @@ describe('POST /products', function () {
     stub.restore();
   });
   // it('should handle product creation failure gracefully', async function () {
-  //   // Crie um stub para ProductModel.create para simular uma falha na criação do produto
+  //   // Crie um stub para ProductModel.create para simular uma falha na criação do produt
   //   const error = new Error('Failed to create product');
   //   const createStub = sinon.stub(ProductModel, 'create').rejects(error);
 
