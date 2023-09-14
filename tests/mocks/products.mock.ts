@@ -4,6 +4,13 @@ const newProductMock = {
   orderId: 4
 };
 
+const newProductMockReturn = {
+  id: 1,
+  name: 'Set Dragon +15+Luck+DD+HP+4 Sockets',
+  price: '50b/50s',
+  orderId: 4
+};
+
 const productsMock = [
   {
     id: 1,
@@ -37,4 +44,4 @@ const productsMock = [
   }
 ];
 
-export { newProductMock, productsMock };
+export { newProductMock, productsMock, newProductMockReturn };

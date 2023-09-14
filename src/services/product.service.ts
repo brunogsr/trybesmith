@@ -1,15 +1,18 @@
 import ProductModel, { ProductSequelizeModel } from '../database/models/product.model';
 import { Product } from '../types/Product';
 
-const getAllProducts = async (): Promise<{ status: number; message: ProductSequelizeModel[] }> => {
+const getAllProducts = async (): Promise<{ type: number; message: ProductSequelizeModel[] }> => {
   const products = await ProductModel.findAll();
-  return { status: 200, message: products };
+  return { type: 200, message: products };
 };
 
 const createProduct = async (product: Product): 
-Promise<{ status: number; message: ProductSequelizeModel }> => {
+Promise<{ type: number; message: ProductSequelizeModel }> => {
   const newProduct = await ProductModel.create(product);
-  return { status: 201, message: newProduct };
+  // const newProductJson = newProduct.toJSON();
+  // console.log(newProduct);
+  
+  return { type: 201, message: newProduct };
 };
 
 export default {
