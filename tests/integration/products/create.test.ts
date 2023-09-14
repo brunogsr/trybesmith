@@ -1,7 +1,6 @@
 import chai, { expect } from 'chai';
 import chaiHttp from 'chai-http';
 import sinon from 'sinon';
-
 import app from '../../../src/app';
 import ProductModel from '../../../src/database/models/product.model';
 import productService from '../../../src/services/product.service';
