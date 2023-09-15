@@ -12,7 +12,7 @@ describe('POST /products', function () {
   beforeEach(function () {
     sinon.restore();
   });
-  it('Testa controller e espera receber status 201 e o produto criado', async function () {
+  it('Testa rota post "/products"', async function () {
     const buildStub = ProductModel.build(newProductMockReturn);
 
     const stub = sinon.stub(ProductModel, 'create').resolves(buildStub);

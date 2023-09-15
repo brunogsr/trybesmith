@@ -1,7 +1,7 @@
-import OrderModel, { OrderSequelizeModel } from '../database/models/order.model';
-// import { Order } from '../types/Order';
+import OrderModel from '../database/models/order.model';
+import { OrderResponse } from '../types/Order';
 
-const getAllOrders = async (): Promise<{ status: number; message: OrderSequelizeModel[] }> => {
+const getAllOrders = async (): Promise<{ status: number; message: OrderResponse[] }> => {
   const orders = await OrderModel.findAll({
     include: [
       {
@@ -10,15 +10,17 @@ const getAllOrders = async (): Promise<{ status: number; message: OrderSequelize
       },
     ],
   });
-  // const formatedOrders = orders.map((order) => {
-  //   const { id, userId, productId } = order as unknown as Order;
-  //   return {
-  //     id,
-  //     userId,
-  //     productId: productId.map((product) => product.id),
-  //   };
-  // });
-  return { status: 200, message: orders };
+  // console.log(orders);
+  
+  const ordersJSON = orders.map((order) => order.toJSON());
+  const ordersWithProductsIds = ordersJSON.map((order) => {
+    const productIdsArray = order.productIds?.map(({ id }) => id);
+    return { id: order.id, userId: order.userId, productIds: productIdsArray };
+  });
+  
+  // console.log(ordersWithProductsIds);
+  
+  return { status: 200, message: ordersWithProductsIds };
 };
 export default {
   getAllOrders,
