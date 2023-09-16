@@ -2,7 +2,7 @@ import ProductModel, { ProductSequelizeModel } from '../database/models/product.
 import { Product } from '../types/Product';
 
 const getAllProducts = async (): Promise<{ status: number; message: ProductSequelizeModel[] }> => {
-  const products = await ProductModel.findAll();
+  const products = await ProductModel.findAll();  
   return { status: 200, message: products };
 };
 
