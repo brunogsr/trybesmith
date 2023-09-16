@@ -1,3 +1,5 @@
+import { Product } from '../../src/types/Product'
+
 const newProductMock = {
   name: 'Set Dragon +15+Luck+DD+HP+4 Sockets',
   price: '50b/50s',
@@ -11,7 +13,7 @@ const newProductMockReturn = {
   orderId: 4
 };
 
-const productsMock = [
+const productsMock: Product[] = [
   {
     id: 1,
     name: 'Excalibur',

@@ -2,6 +2,9 @@
 // import sinon from 'sinon';
 // import sinonChai from 'sinon-chai';
 // import { Request, Response } from 'express';
+// import ProductsService from '../../../src/services/product.service';
+// import ProductsController from '../../../src/controllers/product.controller';
+// import { newProductMock, newProductMockReturn, productsMock } from '../../mocks/products.mock';
 
 // chai.use(sinonChai);
 
@@ -14,7 +17,15 @@
 //     res.json = sinon.stub().returns(res);
 //     sinon.restore();
 //   });
-//   it('Testa controller e espera receber status 200 e os produtos', async function () {
+//   it('Testa controller entrega todos os produtos com getAllProducts', async function () {
+//     const getAllProductsStub = sinon.stub(ProductsService, 'getAllProducts');
+//     getAllProductsStub.resolves({ status: 200, message: productsMock });
 
+//     await ProductsController.getAllProducts(req, res);
+
+//     expect(res.status).to.have.been.calledWith(200);
+//     expect(res.json).to.have.been.calledWith(productsMock);
+
+//     getAllProductsStub.restore();
 //   });
 // });
